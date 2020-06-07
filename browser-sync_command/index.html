@@ -5,10 +5,44 @@
     <title>Browser Sync Command</title>
 </head>
 <body>
-    <h1>Hello Coursera!!  Its a great course....
-        here is the command:
-        browser-sync satrt --server --directory --files "*"
-    </h1>
+    <h1>Hello Coursera!! </h1>
+        <br>
+        <p style="display: none;">browser-sync satrt --server --directory --files "*"</p>
+        <button class="click-me" onclick="showParagraph(this)">Click To Show/copy Browser sync command...</button>
+        <textarea class="texts" style="display: none;" rows="1" cols="100"></textarea>
+         
     
 </body>
+<script>
+    
+    
+    
+    function showParagraph(mythis){
+        const getPara = document.querySelector('p');
+        const text = document.querySelector('.texts');
+        console.log(text);
+        text.style.display = "block";
+        text.textContent = getPara.innerText;
+
+
+        //copy text
+
+
+  /* Select the text field */
+        text.select();
+        text.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+        document.execCommand("copy");
+
+  /* Alert the copied text */
+        mythis.textContent = "COPIED!!!";
+        mythis.style.backgroundColor = "blue";
+
+
+    }
+    
+
+
+</script>
 </html>
